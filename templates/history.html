@@ -1,0 +1,5 @@
+<h1>Your Search History</h1>
+
+{% for search in searches %}
+<a href="/airport/{{search.Airport.abbrev}}"><p><em>{{search.Airport.abbrev}}</em> -- {{search.Airport.name}} in {{search.Airport.state}}</p></a>
+{% endfor %}

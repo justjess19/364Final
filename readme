@@ -1,0 +1,5 @@
+ 
+- # export MAIL_USERNAME=jessicasi364@gmail.com ADMIN=jessicasi364@gmail.com MAIL_PASSWORD=bos11lits12
+- set up data base called final
+- then run python3 final.py runserver
+- 

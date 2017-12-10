@@ -1,0 +1,10 @@
+<h2>{{data["name"]}} Status</h2>
+
+<h3>Current Weather</h3>
+<p><b>Wind:</b> {{data["weather"]["wind"]}}</p>
+<p><b>Visibility:</b> {{data["weather"]["visibility"]}}</p>
+<p><b>Weather:</b> {{data["weather"]["weather"]}}</p>
+
+<h3>Current delays: {{data["status"]["reason"]}}</h3>
+
+<em>Last updated at: {{data["weather"]["meta"]["updated"]}}</em>

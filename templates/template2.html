@@ -1,0 +1,50 @@
+<h1>Hello, {{username}}!</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function getHistory() {
+var request = $.ajax({
+  url: "/history_api",
+  method: "GET",
+  dataType: "json"
+});
+ 
+request.done(function( data ) {
+	$("<b>Your History:</b>").appendTo($("#searchHistory"))
+	
+	for (var i = data.searchList.length - 1; i >= 0; i--) {
+		$("<a href=\"/airport/" + data.searchList[i].abbrev +  "\"><li>" + data.searchList[i].name + "</li></a>").appendTo($("#searchHistory"))
+	};
+});
+}
+</script>
+</style>
+
+<body>
+<h2>Enter your name and airport code!!!</h2>
+<div class="form-box">
+	<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.code.label }} {{ form.code() }}
+	{{ form.submit.label }}{{ form.submit() }}
+</form>
+	<a href="http://www.leonardsguide.com/us-airport-codes.shtml">Here is a list of Airport Codes!</a>
+	<br/>
+	<a href="/history">See Your Past Searches</a>
+	<br/>
+	<a href="/email">Email Your Past Searches</a>
+</div>
+
+<br/>
+<button onclick="getHistory()">Load My Search History -- AJAX</button>
+
+<div id="searchHistory"></div>
+
+<h3>Upload a Profile Picture</h3>
+<form method=post enctype=multipart/form-data action="/my_pic">
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+</body>
+
