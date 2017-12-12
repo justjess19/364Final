@@ -6,4 +6,4 @@ Last updated at: 4:53 PM Local
 - # export MAIL_USERNAME=jessicasi364@gmail.com ADMIN=jessicasi364@gmail.com MAIL_PASSWORD=bos11lits12
 - set up data base called final
 - then run python3 final.py runserver
--
+- where I deployed my code = http://ec2-34-226-249-12.compute-1.amazonaws.com !
